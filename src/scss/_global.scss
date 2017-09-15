@@ -3,14 +3,21 @@
   max-width: 1100px;
   min-width: 600px;
   margin: auto;
-  background: #42a5f4;
-  padding: 50px;
+  background: $secondary-bark;
+  padding: 30px 50px;
+  color: $font-color;
+}
+
+.header {
+  background: $primary-bark;
   color: #fff;
+  padding: 10px 50px;
 }
 
 body {
   font-family: 'Roboto', sans-serif;
   font-size: 18px;
+  background: $secondary-color;
 }
 
 p {

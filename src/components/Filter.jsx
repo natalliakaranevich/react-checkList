@@ -8,9 +8,9 @@ class Filter extends Component {
 
     return <select className="filter" defaultValue='0' onChange={(e) => filterProvider.filter(e.currentTarget.value)}>
       <option value="0">Filter...</option>
-      <option value={filterCount/filterCount}>Filter 1-100</option>
-      <option value={filterCount * 1}>Filter 101-200</option>
-      <option value={filterCount * 2}>Filter 201-300</option>
+      <option value={filterCount * 1}>Filter 1-100</option>
+      <option value={filterCount * 2}>Filter 101-200</option>
+      <option value={filterCount * 3}>Filter 201-300</option>
     </select>
   }
 }

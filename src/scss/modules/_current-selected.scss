@@ -9,8 +9,8 @@
   }
 
   .selected-item {
-    width: 110px;
-    padding: 5px 10px;
+    width: 125px;
+    padding: 5px 10px 5px 10px;
     background: $primary-color;
     margin: 0 10px 10px 0;
     font-size: 14px;
@@ -19,6 +19,8 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    border-radius: $border-radius;
+    text-align: center;
   }
 
   .remove {

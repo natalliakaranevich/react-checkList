@@ -3,10 +3,18 @@ import { connect } from 'react-redux';
 import ItemsListProvider from '../providers/itemsList';
 
 class CurrentSelected extends Component {
+  shouldComponentUpdate(nextProps) {
+    const {parent} = this.props;
+    if (parent && parent.props.componentName.toLowerCase() === 'app') {
+      return!nextProps.itemsCollectionWasChanged
+    }
+    return true;
+  }
+
   removeItem(e) {
     const {itemsListProvider, currentSelectedItems} = this.props;
 
-    itemsListProvider.triggerItem(currentSelectedItems.filter(item  => item.id !== e.currentTarget.id));
+    itemsListProvider.triggerItem(currentSelectedItems.filter(item  => item.id !== e.currentTarget.id), true);
   }
 
   render () {
@@ -24,7 +32,8 @@ class CurrentSelected extends Component {
 
 export default connect(
   state => ({
-    currentSelectedItems: state.currentSelectedItems.items
+    currentSelectedItems: state.currentSelectedItems.items,
+    itemsCollectionWasChanged: state.currentSelectedItems.update
   }),
   dispatch => ({
     itemsListProvider: new ItemsListProvider(dispatch)

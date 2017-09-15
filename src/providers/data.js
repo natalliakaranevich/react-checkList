@@ -47,29 +47,12 @@ class DataProvider {
     return data === null ? '' : data;
   }
 
-  formData(data) {
-    let formData = new FormData();
-    data = data || {};
-
-    for (let prop in data) {
-      (typeof data[prop] !== 'undefined') && formData.append(prop, data[prop]);
-    }
-
-    return formData;
-  }
-
   dispatch(action, data) {
     const _action = Object.assign({
       type: action + this._actionSuffix,
     }, data);
 
     this._action && this._dispatch(_action);
-  }
-
-  buildQueryString(params) {
-    let queryString = Object.keys(params).map(k => `${k}=${params[k]}`).join('&');
-    if (queryString.length) queryString = '?' + queryString;
-    return queryString;
   }
 }
 

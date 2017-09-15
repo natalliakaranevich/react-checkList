@@ -13,7 +13,7 @@ class ItemsList extends Component {
   }
 
   generateItems() {
-    const itemsCount = 300;
+    const itemsCount = 5;
     let itemsArray = [];
 
     for (let i = itemsCount; i > 0; i--) {
@@ -40,8 +40,7 @@ class ItemsList extends Component {
     const {items} = this.state;
     const {currentSelectedItems, searchValue, filterValue, filterCount} = this.props;
     const filtered = items.filter(item => {
-      debugger
-      return (searchValue ? `${item}`.includes(searchValue) : true) && item >= filterValue && filterValue > 0 ? item < +filterValue - +filterCount : true;
+      return (searchValue ? `${item}`.includes(searchValue) : true) && (+filterValue === 0 ? true : item <= filterValue && item >= filterValue - filterCount + 1);
     });
 
     return <ul className="items-list">

@@ -1,8 +1,10 @@
+$inputsSize: 30px;
+
 input[type="checkbox"] {
-  visibility: hidden;
-  width: 0;
-  height: 0;
-  position: absolute;
+  //visibility: hidden;
+  //width: 0;
+  //height: 0;
+  //position: absolute;
 
   &:checked + label {
 
@@ -25,7 +27,7 @@ input[type="checkbox"] {
     font-size: $body-font-size;
 
     &:after, &:before {
-      content: '';
+      //content: '';
       position: absolute;
       left: 0;
       width: $line-height;
@@ -49,12 +51,18 @@ input[type="checkbox"] {
   }
 }
 
+label {
+  cursor: pointer;
+}
+
 input[type="search"],
 input[type="text"],
 input[type="number"],
 input[type="email"] {
   & {
     padding: 5px 10px;
+    height: $inputsSize;
+    color: $font-color;
   }
 
   &::placeholder {
@@ -62,4 +70,11 @@ input[type="email"] {
     color: inherit;
     opacity: 0.8;
   }
+}
+
+select {
+  border: none;
+  height: $inputsSize;
+  color: rgba(41, 67, 78, 0.8);
+  font-size: $body-font-size;
 }

@@ -1,3 +1,4 @@
+/*global document */
 import React from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
@@ -5,7 +6,7 @@ import { ConnectedRouter } from 'react-router-redux'
 import store, { history } from './store'
 import App from './app'
 
-import './index.css'
+import './scss/index.css'
 
 const target = document.querySelector('#root');
 

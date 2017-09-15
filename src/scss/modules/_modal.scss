@@ -3,12 +3,13 @@
 .modal {
   & {
     width: 600px;
-    height: 700px;
+    min-height: 700px;
     margin: 50px auto;
     background: $primary-color;
     padding: 30px 20px;
     position: relative;
     overflow: hidden;
+    border-radius: $border-radius;
   }
 
   .close {
@@ -32,6 +33,7 @@
     text-align: center;
     line-height: 1;
     margin-bottom: 20px;
+    color: #fff;
   }
 
   .filter {
@@ -48,6 +50,7 @@
 
     > button {
       width: 48%;
+      background: $primary-bark;
 
       &:first-of-type {
         margin-right: 4%;
