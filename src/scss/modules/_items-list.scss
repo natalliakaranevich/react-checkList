@@ -1,0 +1,14 @@
+.items-list {
+  height: 400px;
+  width: 100%;
+  background: $secondary-color;
+  padding: 20px;
+  clear: both;
+  overflow: auto;
+  margin-bottom: 20px;
+
+  .item {
+    border-bottom: 1px solid #fff;
+    padding: 15px 5px;
+  }
+}

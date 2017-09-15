@@ -1,0 +1,65 @@
+input[type="checkbox"] {
+  visibility: hidden;
+  width: 0;
+  height: 0;
+  position: absolute;
+
+  &:checked + label {
+
+    &:before {
+      border-color: #fff;
+    }
+
+    &:after {
+      opacity: 1;
+    }
+  }
+
+  + label {
+    $line-height: $body-font-size;
+    $top: 2px;
+
+    position: relative;
+    padding-left: 30px;
+    color: $font-color;
+    font-size: $body-font-size;
+
+    &:after, &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      width: $line-height;
+      height: $line-height;
+      line-height: $line-height;
+      background: #eceff1;
+      border-radius: 3px;
+      border: 1px solid $border-color;
+      top: $top;
+    }
+
+    &:after {
+      background: $primary-color;
+      top: $top + 1;
+      width: $line-height - 2;
+      height: $line-height - 2;
+      transition: opacity 0.3s ease-out;
+      opacity: 0;
+      left: 1px;
+    }
+  }
+}
+
+input[type="search"],
+input[type="text"],
+input[type="number"],
+input[type="email"] {
+  & {
+    padding: 5px 10px;
+  }
+
+  &::placeholder {
+    font-size: inherit;
+    color: inherit;
+    opacity: 0.8;
+  }
+}

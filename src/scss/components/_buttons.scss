@@ -1,0 +1,18 @@
+button,
+.button {
+  width: 150px;
+  border-radius: 5px;
+  line-height: 40px;
+  font-size: $body-font-size;
+  color: #fff;
+  font-weight: 600;
+  background: #4dd0e1;
+  border: 1px solid #4dd0e1;
+  box-shadow: 0 1px 4px #455a64;
+  cursor: pointer;
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+  }
+}

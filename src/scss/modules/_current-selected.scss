@@ -1,0 +1,35 @@
+.current-selected {
+  overflow: hidden;
+  color: #fff;
+  margin-bottom: 20px;
+
+  .modal & .selected-item {
+    border: 1px solid #fff;
+    border-radius: 3px;
+  }
+
+  .selected-item {
+    width: 110px;
+    padding: 5px 10px;
+    background: $primary-color;
+    margin: 0 10px 10px 0;
+    font-size: 14px;
+    color: inherit;
+    float: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .remove {
+    color: inherit;
+    display: inline-block;
+    padding: 0 5px;
+    cursor: pointer;
+    font-size: 18px;
+
+    &:hover {
+      color: #7f0000;
+    }
+  }
+}
