@@ -22,6 +22,15 @@ class ItemsListProvider extends DataProvider {
     }
   }
 
+  removeItem(data) {
+    this.dispatch(ADD_ITEM, {
+      data: data,
+    });
+
+    storageAvailable && Storage.setItem('selectedItems', JSON.stringify(data));
+    this.shouldUpdateTopItemsCollection(false);
+  }
+
   shouldUpdateTopItemsCollection(flag) {
     this.dispatch(CHANGE_COLLECTION, {
       data: flag,

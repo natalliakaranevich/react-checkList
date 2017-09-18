@@ -6,15 +6,16 @@ class CurrentSelected extends Component {
   shouldComponentUpdate(nextProps) {
     const {parent} = this.props;
     if (parent && parent.props.componentName.toLowerCase() === 'app') {
-      return!nextProps.itemsCollectionWasChanged
+      return !nextProps.itemsCollectionWasChanged
     }
     return true;
   }
 
   removeItem(e) {
+    e.preventDefault();
     const {itemsListProvider, currentSelectedItems} = this.props;
 
-    itemsListProvider.triggerItem(currentSelectedItems.filter(item  => item.id !== e.currentTarget.id), true);
+    itemsListProvider.removeItem(currentSelectedItems.filter(item  => item.id !== e.currentTarget.dataset.id), true);
   }
 
   render () {
@@ -22,7 +23,7 @@ class CurrentSelected extends Component {
     return <div className="current-selected">
       {
         currentSelectedItems.map((item, index) => <div key={index} className="selected-item" >
-          {item.name} | <a onClick={this.removeItem.bind(this)} id={item.id} className="remove">x</a>
+          {item.name} | <a onClick={this.removeItem.bind(this)} data-id={item.id} className="remove">x</a>
         </div>)
       }
     </div>

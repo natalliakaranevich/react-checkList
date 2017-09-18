@@ -1,10 +1,10 @@
 $inputsSize: 30px;
 
 input[type="checkbox"] {
-  //visibility: hidden;
-  //width: 0;
-  //height: 0;
-  //position: absolute;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+  position: absolute;
 
   &:checked + label {
 
@@ -27,7 +27,7 @@ input[type="checkbox"] {
     font-size: $body-font-size;
 
     &:after, &:before {
-      //content: '';
+      content: '';
       position: absolute;
       left: 0;
       width: $line-height;
