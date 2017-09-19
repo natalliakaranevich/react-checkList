@@ -2,7 +2,12 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ItemsListProvider from '../providers/itemsList';
 
-class CurrentSelected extends Component {
+export class CurrentSelected extends Component {
+  constructor(props) {
+    super(props);
+
+    // this.getItemsToRemove = this.getItemsToRemove.bind(this);
+  }
   shouldComponentUpdate(nextProps) {
     const {parent} = this.props;
     if (parent && parent.props.componentName.toLowerCase() === 'app') {
@@ -13,9 +18,14 @@ class CurrentSelected extends Component {
 
   removeItem(e) {
     e.preventDefault();
-    const {itemsListProvider, currentSelectedItems} = this.props;
+    const {itemsListProvider} = this.props;
 
-    itemsListProvider.removeItem(currentSelectedItems.filter(item  => item.id !== e.currentTarget.dataset.id), true);
+    itemsListProvider.removeItem(this.getItemsToRemove(e));
+  }
+
+  getItemsToRemove(e) {
+    const {currentSelectedItems} = this.props;
+    return true;
   }
 
   render () {
@@ -29,7 +39,6 @@ class CurrentSelected extends Component {
     </div>
   }
 }
-
 
 export default connect(
   state => ({

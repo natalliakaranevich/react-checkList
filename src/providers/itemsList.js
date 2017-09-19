@@ -6,7 +6,7 @@ import {
   CHANGE_COLLECTION
 } from '../constants/actions';
 import storageAvailable from '../utils';
-const Storage = localStorage;
+const Storage = window.localStorage;
 
 class ItemsListProvider extends DataProvider {
   triggerItem(data, remove) {
