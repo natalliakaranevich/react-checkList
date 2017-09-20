@@ -20,3 +20,11 @@ npm run watch-css
 ./node_modules/.bin/eslint src/
 
 ```
+
+## Tests
+####Please make sure you code if valid with jasmin tests
+
+```
+ npm run testJasmine
+
+```

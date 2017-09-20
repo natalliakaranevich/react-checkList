@@ -3,11 +3,6 @@ import { connect } from 'react-redux';
 import ItemsListProvider from '../providers/itemsList';
 
 export class CurrentSelected extends Component {
-  constructor(props) {
-    super(props);
-
-    // this.getItemsToRemove = this.getItemsToRemove.bind(this);
-  }
   shouldComponentUpdate(nextProps) {
     const {parent} = this.props;
     if (parent && parent.props.componentName.toLowerCase() === 'app') {
@@ -23,9 +18,13 @@ export class CurrentSelected extends Component {
     itemsListProvider.removeItem(this.getItemsToRemove(e));
   }
 
-  getItemsToRemove(e) {
+  /**
+   * returns array of all selected items after current was removed
+   * @param e
+   */
+  getItemsCurrentSelectedItems(e) {
     const {currentSelectedItems} = this.props;
-    return true;
+    return currentSelectedItems.filter(item  => item.id !== e.currentTarget.dataset.id);
   }
 
   render () {
